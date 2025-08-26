@@ -18,14 +18,16 @@
 
   .iframe-wrapper {
     width: 100%;
-    max-width: 940px; /* ancho de diseño máximo */
+    max-width: 940px; /* ancho máximo del diseño */
+    display: flex;
+    justify-content: center;
     transform-origin: top left;
   }
 
   .iframe-container {
     width: 100%;
     height: 0;
-    padding-top: 127.66%; /* altura proporcional: 1200px/940px * 100 */
+    padding-top: 127.66%; /* altura proporcional: 1200px / 940px * 100 */
     position: relative;
   }
 
@@ -38,7 +40,14 @@
     border: none;
   }
 
-  /* Ajuste fino para pantallas grandes */
+  /* Escala proporcional para pantallas más chicas */
+  @media (max-width: 940px) {
+    .iframe-wrapper {
+      transform: scale(calc(100vw / 940));
+    }
+  }
+
+  /* Mantener tamaño natural en pantallas grandes */
   @media (min-width: 940px) {
     .iframe-wrapper {
       transform: scale(1);
@@ -54,6 +63,8 @@
   </div>
 </body>
 </html>
+
+
 
 
 
