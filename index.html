@@ -10,7 +10,6 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
     background: #F6F7FB;
   }
 
@@ -20,28 +19,18 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    overflow: hidden;
   }
 
   .iframe-container {
-    width: 940px; /* ancho de referencia */
-    height: calc(100% * (100vw / 940)); /* se ajusta automáticamente */
-    transform-origin: top left;
-    transform: scale(calc(100vw / 940));
+    width: 100%;
+    max-width: 940px; /* Ancho máximo de diseño */
+    aspect-ratio: 940 / 1200; /* Mantener proporción de tu diseño original (ajusta la altura real) */
   }
 
   .iframe-container iframe {
-    width: 940px;
+    width: 100%;
     height: 100%;
     border: none;
-  }
-
-  /* Evita escalar más de 100% */
-  @media (min-width: 940px) {
-    .iframe-container {
-      transform: scale(1);
-      height: 100%;
-    }
   }
 </style>
 </head>
@@ -53,6 +42,7 @@
   </div>
 </body>
 </html>
+
 
 
 
