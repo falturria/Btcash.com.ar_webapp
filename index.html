@@ -10,7 +10,7 @@
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; /* permite scroll vertical si hace falta */
+    overflow: auto; /* scroll vertical si es necesario */
     background: #F6F7FB;
   }
 
@@ -18,44 +18,27 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 20px 0; /* un poco de espacio arriba y abajo */
+    padding: 20px 0;
     box-sizing: border-box;
   }
 
-  .iframe-container {
-    width: 940px; /* ancho de referencia */
-    transform-origin: top left;
-    transform: scale(calc(100vw / 940));
-    /* Ajusta la altura automáticamente según el escalado */
-    height: calc(100vh / (100vw / 940));
-    max-height: 100%;
-    box-sizing: border-box;
-  }
-
-  .iframe-container iframe {
-    width: 940px;
-    height: 100%;
+  iframe {
+    width: 100%;
+    max-width: 940px; /* ancho máximo del diseño */
+    min-width: 320px; /* ancho mínimo razonable para móviles */
+    height: 100vh; /* ocupa toda la altura de la ventana */
     border: none;
-    display: block;
-  }
-
-  /* Evita escalar más de 100% en pantallas grandes */
-  @media (min-width: 940px) {
-    .iframe-container {
-      transform: scale(1);
-      height: auto;
-    }
   }
 </style>
 </head>
 <body>
   <div class="iframe-wrapper">
-    <div class="iframe-container">
-      <iframe src="https://script.google.com/macros/s/AKfycbwMRZTYyJ5AAsmwFU2I0N6TCBh-AQdxr3eSmWmktShMYekW2NN1qjtje0xzLCTTnllm/exec"></iframe>
-    </div>
+    <iframe src="https://script.google.com/macros/s/AKfycbwMRZTYyJ5AAsmwFU2I0N6TCBh-AQdxr3eSmWmktShMYekW2NN1qjtje0xzLCTTnllm/exec"></iframe>
   </div>
 </body>
 </html>
+
+
 
 
 
